@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="help">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="./app.css">
+    <title>Document</title>
+
+</head>
+
+ <!--ng-controller="HelpController as store"-->
+<body>
+    <div class="two-buttons">
+        <a href="./pages/detail.html"><button>KNOWLEDGEBASE</button></a>
+        <a href="./pages/feedbacks.html"><button>FEEDBACKS</button></a>
+        <button ng-click="detail=!detail">KNOWLEDGEBASE</button>
+        <button ng-click="detail=2">FEEDBACKS</button>
+    </div>
+    <div class="panel-state">
+        <feedbacks ng-if="detail==2" class="panel-state-left"></feedbacks>
+        <help-articles  ng-if="!detail" class="panel-state-left"></help-articles>
+        <help-articles-detail  ng-if="detail" class="panel-state-left"></help-articles-detail>
+
+        <form-feedback class="panel-state-right"></form-feedback>
+
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-resource.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-route.js'></script>
+    <!--<script type="text/javascript" src="./angular.min.js"></script>-->
+    <!--<script type="text/javascript" src="./app.js"></script>-->
+    <script type="text/javascript" src="./app/app.module.js"></script>
+    <script type="text/javascript" src="./app/app.config.js"></script>
+    <script type="text/javascript" src="./app/app.component.js"></script>
+    <script type="text/javascript" src="./app/help-articles/help-articles.module.js"></script>
+    <script type="text/javascript" src="./app/help-articles/help-articles.component.js"></script>
+    <script type="text/javascript" src="./app/help-articles-detail/help-articles-detail.module.js"></script>
+    <script type="text/javascript" src="./app/help-articles-detail/help-articles-detail.component.js"></script>
+    <script type="text/javascript" src="./app/feedbacks/feedbacks.module.js"></script>
+    <script type="text/javascript" src="./app/feedbacks/feedbacks.component.js"></script>
+    <script type="text/javascript" src="./app/form-feedback/form-feedback.module.js"></script>
+    <script type="text/javascript" src="./app/form-feedback/form-feedback.component.js"></script>
+</body>
+
+</html>

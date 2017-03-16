@@ -1,0 +1,33 @@
+<div class="base-header">
+
+    <a href="#">
+        <h1>HELP & SUPPORT</h1>
+    </a>
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input type="text" class="form-control">
+            <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Search</button>
+                    </span>
+        </div>
+    </div>
+
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Category <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+            <li ng-repeat="item in category">
+                <a href="#">{{ item }}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row row-flex">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 category-name" ng-repeat="item in category">
+            <h3>{{ item }}</h3>
+            <div ng-repeat="name in article | filter:item">
+                <div>{{ name.name }}</div>
+            </div>
+        </div>
+    </div>
+</div>
